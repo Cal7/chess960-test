@@ -39,3 +39,6 @@ class Simulation:
                 self.black_time += time_change
 
             self.board.push(move)
+
+    def get_move_history(self): #returns a string representation of the move stack in standard uci form, i.e. "d2d4 d7d5 c2c4"
+        return " ".join([str(move) for move in self.board.move_stack])

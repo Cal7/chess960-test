@@ -8,5 +8,3 @@ def create_db():
 
 def db_exists():
     return isfile("db.sqlite")
-
-create_db()

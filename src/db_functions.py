@@ -7,4 +7,4 @@ def create_db():
     cur.execute("CREATE TABLE `games` ( `id` INTEGER PRIMARY KEY AUTOINCREMENT, `start_postion_id` INTEGER, `time_limit` INTEGER, `time_increment` INTEGER, `result` INTEGER, `move_history` TEXT )")
 
 def db_exists():
-    return isfile("db.sqlite")
+    return isfile("../db/db.sqlite")

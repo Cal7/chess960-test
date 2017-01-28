@@ -1,5 +1,6 @@
 from simulation import Simulation
 from db_functions import *
+import config
 import chess.uci
 import sqlite3
 import sys
@@ -15,7 +16,7 @@ else:
     current_start_position_id = 0
 
 while True:
-    simulation = Simulation(chess.uci.popen_engine("/opt/stockfish/stockfish"), current_start_position_id, 10000, 50)
+    simulation = Simulation(chess.uci.popen_engine(config.engine_path), current_start_position_id, config.time_limit, config.time_increment)
     simulation.run()
     simulation.save_to_db(con)
 
